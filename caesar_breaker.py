@@ -30,7 +30,7 @@ def plaintext_index(cipherchar, shift):
     return (alphaindex(cipherchar) + shift) % len(alphabet)
 
 
-def decrypt_caesar(ciphertext):
+def auto_decrypt_caesar(ciphertext):
     base_char = LETTER_REFERENCE[find_language(ciphertext)].value
     char_count = count_chars(ciphertext)
     most_common = sorted(
@@ -40,3 +40,13 @@ def decrypt_caesar(ciphertext):
     return ''.join(
         [alphabet[plaintext_index(char, shift)] for char in ciphertext]
     )
+
+def brute_force_caesar(ciphertext):
+    for shift in range(len(alphabet)):
+        plaintext = ""
+        for char in ciphertext:
+            if char == ' ':
+                plaintext += ' '
+            else:
+                plaintext += alphabet[plaintext_index(char, shift)]
+        print(shift, plaintext)
