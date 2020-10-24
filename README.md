@@ -12,7 +12,7 @@ usage: ./decipher_caesar.py KEY CIPHERTEXT
 * `CIPHERTEXT`: un **ciphertext** (ASCII + espaces only)
 
 Exemple d'utilisation classique :
-```
+```bash
 $ for x in {1..26}; do echo -n "$x "; ./decipher_caesar.py $x lnbja nbc dw lqrooanvnwc canb ojrkun; done
  1 KMAIZ MAB CV KPQNNZMUMVB BZMA NIQJTM 
  2 JLZHY LZA BU JOPMMYLTLUA AYLZ MHPISL 
